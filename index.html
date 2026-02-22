@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+<div>Repair System</div>
+<div>
+<a href="profile.html">โปรไฟล์</a>
+<a href="#" onclick="logout()">ออกจากระบบ</a>
+</div>
+</div>
+
+<div class="container">
+
+<div class="card" id="repairFormCard">
+<h2>แจ้งซ่อม</h2>
+<input id="item" placeholder="อุปกรณ์">
+<textarea id="detail" placeholder="รายละเอียด"></textarea>
+<input type="file" id="imageUpload" accept="image/*">
+<img id="previewImage" class="preview" style="display:none">
+<button onclick="addRepair()" class="btn-primary">ส่งคำร้อง</button>
+</div>
+
+<div class="card">
+<h3 id="listTitle">รายการงาน</h3>
+<ul id="repairList"></ul>
+</div>
+
+<div class="card" id="adminPanel" style="display:none;">
+    <h3>จัดการผู้ใช้ (Admin)</h3>
+    <input type="text" id="searchUser" placeholder="🔍 ค้นหาชื่อผู้ใช้..." onkeyup="renderUsers()" style="margin-bottom: 15px;">
+    <ul id="userList"></ul>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
